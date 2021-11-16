@@ -42,15 +42,17 @@ document.querySelector("#skip").addEventListener("click", function() {
 document.querySelector("#mute").addEventListener("click", function() {
 	if (video.muted == true) {
 		video.muted = false;
+		document.getElementById("mute").innerHTML="Mute";
 		console.log("Video unmuted");
 	} else {
 		video.muted = true;
+		document.getElementById("mute").innerHTML="Unmute";
 		console.log("Video muted");
 	}
 });
 
 document.querySelector("#slider").addEventListener("click", function() {
-	video.volume = this.value / 100
+	video.volume = this.value / 100;
 	console.log("The current video volume is " + video.volume);
 	document.querySelector("#volume").innerHTML = video.volume * 100 + "%";
 });
